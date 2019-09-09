@@ -11,7 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Component
-@Path("/terence")
+@Path("terence")
 public class StudentResource {
 
 	@Autowired
@@ -24,7 +24,9 @@ public class StudentResource {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String testRunning(){
-		String msg = String.valueOf(context.getBeansOfType(StudentResource.class));
-		return studentService.testApplicationRunning(msg);
+		if (studentService != null){
+			return "test is running";
+		}
+		return "spring is error";
 	}
 }
