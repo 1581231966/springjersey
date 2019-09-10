@@ -16,7 +16,7 @@
     </listener>
 
     <servlet>
-        <servlet-name>jersey</servlet-name>
+        <servlet-name>spring-jersey</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
@@ -26,7 +26,7 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>jersey</servlet-name>
+        <servlet-name>spring-jersey</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 </web-app>
