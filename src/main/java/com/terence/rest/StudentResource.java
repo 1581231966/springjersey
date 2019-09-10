@@ -1,6 +1,7 @@
 package com.terence.rest;
 
-import com.terence.service.implement.StudentService;
+import com.terence.entities.Student;
+import com.terence.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Component
-@Path("terence")
+@Path("/terence")
 public class StudentResource {
 
 	@Autowired
@@ -24,9 +25,7 @@ public class StudentResource {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String testRunning(){
-		if (studentService != null){
-			return "test is running";
-		}
-		return "spring is error";
+		String msg = String.valueOf(context.getBeansOfType(StudentResource.class));
+		return studentService.testApplicationRunning(msg);
 	}
 }

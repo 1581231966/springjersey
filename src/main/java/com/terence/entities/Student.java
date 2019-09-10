@@ -4,6 +4,9 @@ package com.terence.entities;
 * Author: Terence-->in home*
 * Date: 2019-9-7*/
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Student {
 
 	private String name ;

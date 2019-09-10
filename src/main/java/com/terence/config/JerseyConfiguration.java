@@ -4,9 +4,8 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.ApplicationPath;
 
-@ApplicationPath("/*")
 public class JerseyConfiguration extends ResourceConfig {
-	JerseyConfiguration(){
+	public JerseyConfiguration(){
 		packages("com.terence.rest");
 	}
 }

@@ -1,4 +1,4 @@
-package com.terence.service;
+package com.terence.service.interfaces;
 
 
 
