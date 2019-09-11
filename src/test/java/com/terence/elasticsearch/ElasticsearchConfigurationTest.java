@@ -32,4 +32,5 @@ public class ElasticsearchConfigurationTest {
 		RestClient client = configuration.getLowLevelClient();
 		Assert.assertNotNull(client);
 	}
+
 }

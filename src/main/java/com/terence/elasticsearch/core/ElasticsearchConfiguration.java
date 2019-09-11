@@ -10,7 +10,7 @@ public class ElasticsearchConfiguration {
 
 	@Bean(destroyMethod = "close")
 	public ElasticsearchClientFactory getFactory(){
-		ElasticsearchEnvironment environment = new ElasticsearchEnvironment("lkc.gushenge.com", 9300,60000, 120000);
+		ElasticsearchEnvironment environment = new ElasticsearchEnvironment("lkc.gushenge.com", 9200,60000, 120000);
 		return ElasticsearchClientFactory.getInstance(environment);
 	}
 	@Bean
