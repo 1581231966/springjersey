@@ -2,18 +2,19 @@ package com.terence.elasticsearch.repository;
 
 import com.terence.entities.Student;
 import org.apache.log4j.Logger;
-import org.elasticsearch.action.get.GetRequestBuilder;
-import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.xcontent.XContentType;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.client.RestOperations;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @Repository
 public class StudentRepository  {
@@ -27,7 +28,7 @@ public class StudentRepository  {
 
 	public void testSearch(){
 		logger.info("--Elastic search testing start--");
-		IndexRequest request = new IndexRequest(
+/*		IndexRequest request = new IndexRequest(
 				"posts",
 				"doc",
 				"2");
@@ -41,7 +42,19 @@ public class StudentRepository  {
 			restHighLevelClient.index(request, RequestOptions.DEFAULT);
 		} catch (IOException e) {
 			e.printStackTrace();
+		}*/
+		SearchRequest searchRequest = new SearchRequest("posts");
+		searchRequest.types("doc");
+		try {
+			SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
+			SearchHit searchHit = searchResponse.getHits().getAt(0);
+			SearchHit[] searchHits = searchResponse.getHits().getHits();
+			logger.info(Arrays.toString(searchHits));
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		logger.info(searchRequest.preference());
 		logger.info("--Done--");
 	}
+
 }
