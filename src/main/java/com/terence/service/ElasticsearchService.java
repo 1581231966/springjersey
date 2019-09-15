@@ -11,8 +11,11 @@ import org.springframework.stereotype.Service;
 public class ElasticsearchService {
 
 	private static final Logger logger = Logger.getLogger(ElasticsearchService.class.getName());
-	@Autowired
-	private StudentRepository studentRepository;
+	private final StudentRepository studentRepository;
+
+	public ElasticsearchService(StudentRepository studentRepository) {
+		this.studentRepository = studentRepository;
+	}
 
 	public String testElasticsearch(){
 		studentRepository.testSearch();
