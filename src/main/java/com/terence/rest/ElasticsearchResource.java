@@ -13,9 +13,11 @@ import javax.ws.rs.core.MediaType;
 @Path("/elasticsearch")
 public class ElasticsearchResource {
 
-	@Autowired
 	private ElasticsearchService elasticsearchService;
 
+	public ElasticsearchResource(ElasticsearchService elasticsearchService){
+		this.elasticsearchService = elasticsearchService;
+	}
 	@Path("/testes")
 	@POST
 	@Produces(MediaType.TEXT_PLAIN)
