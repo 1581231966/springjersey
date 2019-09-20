@@ -17,11 +17,14 @@ import java.util.Arrays;
 public class StudentRepository  {
 
 	private static final Logger logger = Logger.getLogger(StudentRepository.class.getName());
-	@Autowired
-	private RestClient restClient;
+	private final RestClient restClient;
 
-	@Autowired
-	private RestHighLevelClient restHighLevelClient;
+	private final RestHighLevelClient restHighLevelClient;
+
+	public StudentRepository(RestClient restClient, RestHighLevelClient restHighLevelClient) {
+		this.restClient = restClient;
+		this.restHighLevelClient = restHighLevelClient;
+	}
 
 	public void testSearch(){
 		logger.info("--Elastic search testing start--");
