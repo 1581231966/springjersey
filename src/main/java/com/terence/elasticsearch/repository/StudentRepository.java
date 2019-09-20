@@ -1,6 +1,5 @@
 package com.terence.elasticsearch.repository;
 
-import com.terence.entities.Student;
 import org.apache.log4j.Logger;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -8,13 +7,11 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 
 @Repository
 public class StudentRepository  {

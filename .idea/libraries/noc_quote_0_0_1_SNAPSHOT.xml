@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="noc-quote-0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://C:/gitProjects/monitoring-jobs/noc-quote/target/noc-quote-0.0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://C:/gitProjects/monitoring-jobs/noc-quote/target/noc-quote-0.0.1-SNAPSHOT.jar!/" recursive="false" />
+  </library>
+</component>
